@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UI; //Importante importar esta librería para usar la UI
 
@@ -9,11 +10,11 @@ public class SpaceshipMove : MonoBehaviour
 
     //Variable PÚBLICA que indica la velocidad a la que se desplaza
     //La nave NO se mueve, son los obtstáculos los que se desplazan
-    public float speed = 3f;
+    private float speed = 5f;
 
     //Variable que determina cómo de rápido se mueve la nave con el joystick
     //De momento fija, ya veremos si aumenta con la velocidad o con powerUps
-    private float moveSpeed = 3f;
+    private float moveSpeed = 5f;
 
     //Variable que determina si estoy en los márgenes
     private bool inMarginMoveX = true;
@@ -48,10 +49,10 @@ public class SpaceshipMove : MonoBehaviour
         for(int n = 0; ; n += 10)
         {
             //Cambio el texto que aparece en pantalla
-            TextDistance.text = "DISTANCIA: " + n;
+            TextDistance.text = "DISTANCIA: " + n * 0.5;
 
-            //Ejecuto cada ciclo esperando 1 segundo
-            yield return new WaitForSeconds(1f);
+            //Ejecuto cada ciclo esperando 0.1 segundo
+            yield return new WaitForSeconds(0.1f);
         }
         
     }
@@ -81,9 +82,9 @@ public class SpaceshipMove : MonoBehaviour
         //Movemos la nave mediante el método transform.translate
         //Lo multiplicamos por deltaTime, el eje y la velocidad de movimiento la nave
 
-        
-        float myPosX = transform.position.x;
-        float myPosY = transform.position.y;
+        //print(transform.position.x);
+        float myPosX = transform.position.x * Time.deltaTime * speed;
+        float myPosY = transform.position.y * Time.deltaTime * speed;
 
         if (myPosX < -4.5 && desplX < 0)
         {

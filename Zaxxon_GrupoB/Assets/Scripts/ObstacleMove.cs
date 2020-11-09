@@ -32,7 +32,7 @@ public class ObstacleMove : MonoBehaviour
         }
 
         //Asignamos una velocidad fija (de momento)
-        obstacleSpeed = 2.5f;
+        obstacleSpeed = 7f;
         transform.Translate(Vector3.back * Time.deltaTime * obstacleSpeed);
  
     }
