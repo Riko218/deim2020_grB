@@ -18,10 +18,17 @@ public class ObstacleCreator : MonoBehaviour
 
     //Distancia a la que se crean las columnas iniciales
     [SerializeField] float distanciaInicial = 5;
+
+    //Acceder a los componentes de la nave
+    public GameObject Nave;
+    private SpaceshipMove spaceshipMove;
     
     // Start is called before the first frame update
     void Start()
     {
+
+        //Accedo al script de la nave
+        spaceshipMove = Nave.GetComponent<SpaceshipMove>();
         //Creo las columnas iniciales
         for(int n = 1; n <= 30; n++)
         {
@@ -52,7 +59,8 @@ public class ObstacleCreator : MonoBehaviour
         for (; ; )
         {
             CrearColumna();
-            yield return new WaitForSeconds(1f);
+            float interval = 4 / spaceshipMove.speed;
+            yield return new WaitForSeconds(interval);
         }
 
     }

@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8724615c3f21ebf45840c34367265748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ClaseCubo: {fileID: 1615638586}
+  Cubo: {fileID: 1615638585}
 --- !u!135 &1194889136
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -398,7 +398,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194889134}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.95702, y: -1.4000001, z: 119.16}
+  m_LocalPosition: {x: 2.88, y: -1.4000001, z: 119.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -502,8 +502,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6e548cbe62d0704b8f5c6aedb0489a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 2
   SpeedText: {fileID: 55375141}
+  MyPrefab: {fileID: 3302473323760357148, guid: 159e83a824ed47448a631ce624752545, type: 3}
 --- !u!65 &1615638587
 BoxCollider:
   m_ObjectHideFlags: 0

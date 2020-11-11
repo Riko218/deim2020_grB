@@ -9,7 +9,7 @@ public class SpaceshipMove : MonoBehaviour
 
     //Variable PÚBLICA que indica la velocidad a la que se desplaza
     //La nave NO se mueve, son los obtstáculos los que se desplazan
-    public float speed = 3f;
+    public float speed;
 
     //Variable que determina cómo de rápido se mueve la nave con el joystick
     //De momento fija, ya veremos si aumenta con la velocidad o con powerUps
@@ -24,6 +24,7 @@ public class SpaceshipMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        speed = 1f;
         //Llamo a la corrutina que hace aumentar la velocidad
         StartCoroutine("Distancia");
         
@@ -42,10 +43,10 @@ public class SpaceshipMove : MonoBehaviour
     {
         //Bucle infinito que suma 10 en cada ciclo
         //El segundo parámetro está vacío, por eso es infinito
-        for(int n = 0; ; n += 2)
+        for(int n = 0; ; n++)
         {
             //Cambio el texto que aparece en pantalla
-            TextDistance.text = "DISTANCIA: " + n;
+            TextDistance.text = "DISTANCIA: " + n * speed;
 
             //Ejecuto cada ciclo esperando 1 segundo
             yield return new WaitForSeconds(0.1f);
