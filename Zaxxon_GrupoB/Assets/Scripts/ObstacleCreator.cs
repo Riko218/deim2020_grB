@@ -52,7 +52,8 @@ public class ObstacleCreator : MonoBehaviour
     }
 
     //Corrutina que se ejecuta cada segundo
-    //NOTA: habría que cambiar ese segundo por una variable que dependa de la velocidad
+    //NOTA: ahora el intervalo de la corrutina depende de la variable "speed" de la nave
+    //Aplicamos la fórmula "espacioEntreColumnas / velocidad"
     IEnumerator InstanciadorColumnas()
     {
         //Bucle infinito (poner esto es lo mismo que while(true){}
