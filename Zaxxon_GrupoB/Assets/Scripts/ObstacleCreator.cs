@@ -16,8 +16,8 @@ public class ObstacleCreator : MonoBehaviour
     private float randomNumber;
     Vector3 RandomPos;
 
-    //Distancia a la que se crean las columnas iniciales
-    [SerializeField] float distanciaInicial = 5;
+    //Distancia entre columnas
+    float distanciaSep = 6f;
 
     //Acceder a los componentes de la nave
     public GameObject Nave;
@@ -30,10 +30,10 @@ public class ObstacleCreator : MonoBehaviour
         //Accedo al script de la nave
         spaceshipMove = Nave.GetComponent<SpaceshipMove>();
         //Creo las columnas iniciales
-        for(int n = 1; n <= 30; n++)
+        for(int n = 1; n <= 10; n++)
         {
-            
-            CrearColumna(-n * distanciaInicial);
+            //Creamos cada columna, con la separación establecida
+            CrearColumna(-n * distanciaSep);
         }
         
         //Lanzo la corrutina
@@ -42,9 +42,10 @@ public class ObstacleCreator : MonoBehaviour
     }
 
     //Función que crea una columna en una posición Random
+    //Lo hemos cambiado para que se le pueda pasar el valor en X (0 por defecto)
     void CrearColumna(float posZ = 0f)
     {
-        randomNumber = Random.Range(0f, 7f);
+        randomNumber = Random.Range(0f, 14f);
         RandomPos = new Vector3(randomNumber, 0, posZ);
         //print(RandomPos);
         Vector3 FinalPos = InitPos.position + RandomPos;
@@ -60,7 +61,8 @@ public class ObstacleCreator : MonoBehaviour
         for (; ; )
         {
             CrearColumna();
-            float interval = 4 / spaceshipMove.speed;
+            float interval = distanciaSep / spaceshipMove.speed;
+            
             yield return new WaitForSeconds(interval);
         }
 
