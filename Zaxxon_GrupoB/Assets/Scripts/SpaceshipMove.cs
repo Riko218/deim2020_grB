@@ -42,8 +42,6 @@ public class SpaceshipMove : MonoBehaviour
         //Asocio el componente de audio
         audioSource = GetComponent<AudioSource>();
 
-        
-
 
     }
 
