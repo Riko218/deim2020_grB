@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class distancescript : MonoBehaviour
+public class scrdistancefinal : MonoBehaviour
+
 {
-    public static float distance;
-
-
+    public Text TextDistance;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +17,6 @@ public class distancescript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        TextDistance.text = "Puntuación:   " + distancescript.distance.ToString("F0");
     }
 }
