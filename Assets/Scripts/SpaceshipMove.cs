@@ -1,6 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UI; //Importante importar esta librería para usar la UI
 

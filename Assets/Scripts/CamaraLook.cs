@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CamaraLook : MonoBehaviour
 {
-    [SerializeField] Transform Tarjet;
+    public Transform Tarjet;
     private Vector3 camaraVelocity;
     private float smoothVelocity = 0.6f; 
 

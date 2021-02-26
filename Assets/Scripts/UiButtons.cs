@@ -14,6 +14,7 @@ public class UiButtons : MonoBehaviour
 
     public void reiniciar()
     {
+        distancescript.distance = 0f;
         SceneManager.LoadScene("zaxxon_scene1");
     }
     

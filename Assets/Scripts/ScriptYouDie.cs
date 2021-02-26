@@ -24,7 +24,7 @@ public class ScriptYouDie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
         alphaLevel++;
         Youdie.GetComponent<Image>().color = new Color(1, 1, 1, alphaLevel) * Time.deltaTime / 3;
 
